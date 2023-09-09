@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+
+{% block dev_Start %}
+<form action="/upload_Image" class="upload__form" method="POST">
+  <!--  <button class="logout__button">
+        <i class="ri-logout-circle-r-line"></i>Logout
+    </button> -->
+    <h1 class="logout__title">Image Uploader</h1>
+    <div class="login__content">
+      <div class="login__box">
+        <i class="ri-image-line up_img"></i>
+  
+        <div class="login__box-input">
+          <input type="file" name="image" class="login__input" id="file-input" accept="image/*">
+          <label for="" class="login__label">Upload Image Here</label>
+        </div>
+      </div>
+
+    </div>
+  
+    <button type="submit" class="upload__button">Upload</button>
+  </form>
+
+
+{% endblock %}

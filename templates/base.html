@@ -1,0 +1,17 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>{% block title %}  {% endblock %}</title>
+</head>
+<body>
+    <div class="back_Bg">
+        <img src="static/img/bg.png" alt="login image" class="back_img">
+        {% block dev_Start %}
+        {% endblock %}
+    </div>  
+</body>
+</html>

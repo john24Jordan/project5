@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block dev_Start %}
+
+{% if filename == '' %}
+<h3>Capture Image</h3>
+<video id="camera-feed" class="b_o_x" autoplay></video>
+<div class="outer_border">
+    <form class="form_display" method="POST" action="/captureImage">
+        <div class="choose-file">
+            <input type="hidden" name="image" id="file-input"/>
+            <input type="submit" style="display: none;">
+        </div>
+        <div class="Isubmit">
+            <button id="captureButton" class="-btn">Capture Image</button>
+        </div>
+    </form>
+</div>
+{% endif %}
+
+
+{% if filename != '' %}
+<h3>Captured Image</h3>
+<img class="captured-image" src="{{ url_for('captured', filename=filename) }}" alt="Uploaded Image" style="margin-top: 10px;">
+{% endif %}
+<div class="--dis"><br>
+    <span>{{filename}}</span>
+</div>
+<div>
+    {{error_message}}
+</div>
+
+
+<script src="{{url_for('static', filename='js/main1.js')}}"></script>
+{% endblock %}
